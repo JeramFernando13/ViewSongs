@@ -45,6 +45,7 @@ export default function EditSong() {
   return (
     <div className="max-w-xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Edit Song</h1>
+        <button onClick={() => navigate(`/songs/${id}`)} className="mx-2 test-blue-500 px-4 py-2  hover:test-blue-900">View Song</button>
       {error && <p className="text-red-500 mb-4">{error}</p>}
       <form onSubmit={handleUpdate} className="space-y-4">
         <input
@@ -64,7 +65,7 @@ export default function EditSong() {
         />
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700"
         >
           Salva modifiche
         </button>

@@ -8,11 +8,11 @@ import HomePage from '../pages/home/HomePage'
 
 import Songs from '../pages/songpage/Songs'
 import AddSong from '../pages/songpage/AddSong'
-import SongDetail from '../pages/songpage/SongDetail'
 import EditSong from '../pages/songpage/EditSong'
 
 import NotFound from '../pages/NotFound'
 import Dashboard from '../pages/Dashboard'
+import SongView from '../pages/songpage/SongView'
 // import Auth from './pages/Auth'
 // import Dashboard from './pages/Dashboard'
 
@@ -33,8 +33,8 @@ export function Routing() {
           {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           <Route path="/songs" element={<Songs />} />
           <Route path="/songs/new" element={<AddSong />} />
-          <Route path="/songs/:id/detail" element={<SongDetail />} />
           <Route path="/songs/:id/edit" element={<EditSong />} />
+          <Route path="/songs/:id" element={<SongView />} />
 
           <Route path="/dashboard" element={<Dashboard />} />
 
