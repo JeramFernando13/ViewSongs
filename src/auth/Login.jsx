@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../supabase/supabaseClient";
-import { useNavigate, Link } from "react-router";
+import { useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 export default function Login() {

@@ -3,7 +3,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { supabase } from '../supabase/supabaseClient'
-import { useNavigate, Link } from 'react-router'
+import { useNavigate, Link } from 'react-router-dom'
 import {
   Dialog,
   DialogHeader,

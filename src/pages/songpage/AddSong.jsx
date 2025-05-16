@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../../supabase/supabaseClient";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 export default function AddSong() {
   const [title, setTitle] = useState('');
