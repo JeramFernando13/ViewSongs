@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../supabase/supabaseClient";
 import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 
 export default function Songs(){
     const [songs, setSongs] = useState([]);
@@ -37,7 +37,14 @@ export default function Songs(){
     return(
         <>
             <div className="p-6">
-                <h1 className="text-2xl font-bold mb-4">Your Songs</h1>
+                 <div className="flex items-center gap-4 mb-4">
+                    <h1 className="text-2xl font-bold">Your Songs</h1>
+                    <Link to="/songs/new">
+                        <button type="button" className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-900">
+                            Add Song +
+                        </button>
+                    </Link>
+                </div>
                 {loading && <p>Loading...</p>}
                 {!loading && songs.length === 0 && <p>No Song Found</p>}
                 <ul className="space-y-2">
