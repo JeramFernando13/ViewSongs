@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../../supabase/supabaseClient";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function AddSong() {
   const [title, setTitle] = useState('');
@@ -29,6 +30,7 @@ export default function AddSong() {
       setError(error.message);
     } else {
       navigate("/songs");
+      toast.success('New Song created Successfully')
     }
   };
 

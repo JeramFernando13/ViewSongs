@@ -33,8 +33,8 @@ export function Routing() {
           {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           <Route path="/songs" element={<Songs />} />
           <Route path="/songs/new" element={<AddSong />} />
-          <Route path="/songs/detail" element={<SongDetail />} />
-          <Route path="/songs/edit" element={<EditSong />} />
+          <Route path="/songs/:id/detail" element={<SongDetail />} />
+          <Route path="/songs/:id/edit" element={<EditSong />} />
 
           <Route path="/dashboard" element={<Dashboard />} />
 

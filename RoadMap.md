@@ -6,12 +6,12 @@
 	•	✅ Setup progetto con React + Vite + Tailwind CSS
 	•	✅ Integrazione con Supabase
 	•	✅ Setup autenticazione (email/password e GitHub)
-	•	Test login funzionante
+	•	✅  Test login funzionante
 
 ⸻
 
 🛠 Fase 2 – Backend Supabase
-	•	Tabella songs con struttura flessibile per accordi e testi
+	•	  Tabella songs con struttura flessibile per accordi e testi
 	•	Tabella setlists per gestire raccolte di brani
 	•	Eventuale tabella users_meta per ruoli/admin (in futuro)
 
@@ -19,10 +19,10 @@
 
 💻 Fase 3 – Frontend base
 	•	Routing React configurato (Routing.jsx)
-	•	Creazione pagina Songs.jsx
-	•	Creazione form per inserire nuove canzoni
+	•	✅ Creazione pagina Songs.jsx
+	•	✅ Creazione form per inserire nuove canzoni
 	•	Creazione pagina singola canzone
-	•	Modifica/cancellazione canzone
+	•	✅ Modifica/cancellazione canzone
 
 ⸻
 
