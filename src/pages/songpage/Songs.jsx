@@ -70,35 +70,40 @@ export default function Songs(){
             <div className="p-6">
                  <div className="flex items-center gap-4 mb-4">
                     <h1 className="text-2xl font-bold">Your Songs</h1>
-                    <Link to="/songs/new">
-                        <button type="button" className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-900">
-                            Add Song +
-                        </button>
-                    </Link>
+                    
                 </div>
                 {loading && <p>Loading...</p>}
                 {!loading && songs.length === 0 && <p>No Song Found</p>}
                 <ul className="space-y-2">
                     {songs.map((song) => (
-                    <li key={song.id} className="border p-4 rounded bg-white shadow relative">
+                      <li key={song.id} className="border p-4 rounded bg-white shadow relative">
+                            <Link to={`/songs/${song.id}`}>
                         <div className="flex justify-between items-start">
                           <div>
-                            <h2 className="text-xl font-semibold">{song.title}</h2>
-                            <pre className="text-sm mt-2 whitespace-pre-wrap">{song.lyrics}</pre>
+                              <h2 className="text-xl font-semibold hover:underline">{song.title}</h2>
+                              <pre className="text-sm text-gray-600 mt-1 whitespace-pre-wrap line-clamp-2">
+                                {song.lyrics}
+                              </pre>
                           </div>
                           <div className="relative">
                             <button
                               onClick={() => setOpenMenuId(openMenuId === song.id ? null : song.id)}
                               className="text-gray-500 hover:text-black"
-                            >
+                              >
                               ⋮
                             </button>
                             {openMenuId === song.id && (
+                              
                               <div className="absolute right-0 mt-2 w-32 bg-white border rounded shadow z-10">
+                                <button
+                                  onClick={() => navigate(`/songs/${song.id}`)}
+                                  className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">
+                                  View Song
+                                </button>
                                 <button
                                   onClick={() => navigate(`/songs/${song.id}/edit`)}
                                   className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
-                                >
+                                  >
                                   Edit
                                 </button>
                                 <button
@@ -107,13 +112,14 @@ export default function Songs(){
                                     setIsDeleteDialogOpen(true);
                                   }}
                                   className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 text-red-600"
-                                >
+                                  >
                                   Delete
                                 </button>
                               </div>
                             )}
                           </div>
                         </div>
+                            </Link>
                     </li>
                     ))}
                 </ul>

@@ -8,9 +8,9 @@ const fonts = [
   { label: "Sans", className: "font-sans" },
   { label: "Serif", className: "font-serif" },
   { label: "Mono", className: "font-mono" },
-  { label: "Handwriting", className: "font-handwriting" }, // definire in tailwind.config.js
-  { label: "Rounded", className: "rounded-font" },        // definire in tailwind.config.js
-  { label: "Condensed", className: "condensed-font" },    // definire in tailwind.config.js
+  { label: "Handwriting", className: "font-handwriting" },
+  { label: "Rounded", className: "font-rounded" },       
+  { label: "Condensed", className: "font-condensed" }   
 ];
 
 // Funzione per determinare se una riga è solo accordi (es. solo lettere, numeri, #, b, m, -, /, spazi)

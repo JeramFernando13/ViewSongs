@@ -10,6 +10,8 @@ import Songs from '../pages/songpage/Songs'
 import AddSong from '../pages/songpage/AddSong'
 import EditSong from '../pages/songpage/EditSong'
 
+import ImportChordPro from '../pages/songpage/ImportChordPro'
+
 import NotFound from '../pages/NotFound'
 import Dashboard from '../pages/Dashboard'
 import SongView from '../pages/songpage/SongView'
@@ -35,6 +37,7 @@ export function Routing() {
           <Route path="/songs/new" element={<AddSong />} />
           <Route path="/songs/:id/edit" element={<EditSong />} />
           <Route path="/songs/:id" element={<SongView />} />
+          <Route path='/songs/import' element={<ImportChordPro />} />
 
           <Route path="/dashboard" element={<Dashboard />} />
 

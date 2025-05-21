@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { supabase } from '../supabase/supabaseClient'
 import { useNavigate, Link } from 'react-router-dom'
+import { PlusIcon } from "@heroicons/react/24/outline";
 import {
   Dialog,
   DialogHeader,
@@ -50,12 +51,43 @@ export function Nav() {
               <div className="flex space-x-4">
                 <Link to="/dashboard" className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</Link>
                 <Link to="/songs" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Songs</Link>
+
                 <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
                 <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
               </div>
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <Menu as="div" className="relative mr-3">
+              <div>
+                <MenuButton className="relative flex items-center justify-center rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                  <span className="sr-only">Open add menu</span>
+                  <PlusIcon aria-hidden="true" className="size-6" />
+                </MenuButton>
+              </div>
+              <MenuItems
+                transition
+                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-none"
+              >
+                <MenuItem>
+                  <button
+                    onClick={() => navigate("/songs/import")}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Import Song
+                  </button>
+                </MenuItem>
+                <MenuItem>
+                  <button
+                    onClick={() => navigate("/songs/new")}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Add Song
+                  </button>
+                </MenuItem>
+              </MenuItems>
+            </Menu>
+
             <button
               type="button"
               className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
@@ -163,29 +195,30 @@ export function Nav() {
           <DisclosureButton
             as={Link}
             to="/dashboard"
-            className="block rounded-md px-3 py-2 text-base font-medium bg-gray-900 text-white"
-          >
+            className="block rounded-md px-3 py-2 text-base font-medium bg-gray-900 text-white">
             Dashboard
           </DisclosureButton>
+          
           <DisclosureButton
             as="a"
             href="#"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          >
-            Team
+            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+            <Link to= '/songs'>
+              Songs
+            </Link>
           </DisclosureButton>
+
           <DisclosureButton
             as="a"
             href="#"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          >
+            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
             Projects
           </DisclosureButton>
+          
           <DisclosureButton
             as="a"
             href="#"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          >
+            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
             Calendar
           </DisclosureButton>
         </div>

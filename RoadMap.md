@@ -11,7 +11,7 @@
 ⸻
 
 🛠 Fase 2 – Backend Supabase
-	•	  Tabella songs con struttura flessibile per accordi e testi
+	•	✅ Tabella songs con struttura flessibile per accordi e testi
 	•	Tabella setlists per gestire raccolte di brani
 	•	Eventuale tabella users_meta per ruoli/admin (in futuro)
 
@@ -21,12 +21,14 @@
 	•	Routing React configurato (Routing.jsx)
 	•	✅ Creazione pagina Songs.jsx
 	•	✅ Creazione form per inserire nuove canzoni
-	•	Creazione pagina singola canzone
+	•	✅ Creazione pagina singola canzone
 	•	✅ Modifica/cancellazione canzone
 
 ⸻
 
 🎵 Fase 4 – Funzionalità avanzate
+	•	✅ Upload e parsing file .chordpro
+	•	✅ Mini preview lyrics nella lista
 	•	Modalità presentazione (fullscreen)
 	•	Filtri: solo accordi / solo testo / entrambi
 	•	Transposizione accordi
@@ -43,5 +45,5 @@
 ⸻
 
 📲 Fase 6 – Deploy & App
-	•	Deploy su Vercel/Netlify
+	•	✅ Deploy su Vercel (dev test)
 	•	Integrazione con Capacitor o Expo per versione mobile
