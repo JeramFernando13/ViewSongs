@@ -3,6 +3,9 @@ import { supabase } from "../supabase/supabaseClient";
 import { useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
+import HCaptcha from '@hcaptcha/react-hcaptcha';
+
+
 export default function Register() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -75,6 +78,12 @@ export default function Register() {
           required
         />
         {error && <p className="text-red-500 text-sm">{error}</p>}
+
+        <HCaptcha
+        sitekey="496653ac-582a-4208-af60-2206f19e424e"
+        onVerify={(token,ekey) => handleVerificationSuccess(token, ekey)}
+        />
+
         <button type="submit" className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
           Crea account
         </button>

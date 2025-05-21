@@ -3,6 +3,8 @@ import { supabase } from "../supabase/supabaseClient";
 import { useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
+import HCaptcha from '@hcaptcha/react-hcaptcha';
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,9 +40,14 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="w-full border px-3 py-2 rounded"
-          required
-        />
+          required/>
         {error && <p className="text-red-500 text-sm">{error}</p>}
+
+        <HCaptcha
+        sitekey="496653ac-582a-4208-af60-2206f19e424e"
+        onVerify={(token,ekey) => handleVerificationSuccess(token, ekey)}
+        />
+        
         <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
           Accedi
         </button>

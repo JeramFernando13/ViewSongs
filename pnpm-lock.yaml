@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@hcaptcha/react-hcaptcha':
+        specifier: ^1.12.0
+        version: 1.12.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@headlessui/react':
         specifier: ^2.2.3
         version: 2.2.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -154,6 +157,10 @@ packages:
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
+
+  '@babel/runtime@7.27.1':
+    resolution: {integrity: sha512-1x3D2xEk2fRo3PAhwQwu5UubzgiVWSXTBfWpVd2Mx2AzRqJuDJCsgaDVZ7HB5iGzDW1Hl1sWN2mFyKjmR9uAog==}
+    engines: {node: '>=6.9.0'}
 
   '@babel/template@7.27.0':
     resolution: {integrity: sha512-2ncevenBqXI6qRMukPlXwHKHchC7RyMuu4xv5JBXRfOGVcTy1mXCD12qrp7Jsoxll1EV3+9sE4GugBVRjT2jFA==}
@@ -393,6 +400,15 @@ packages:
 
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
+
+  '@hcaptcha/loader@2.0.0':
+    resolution: {integrity: sha512-fFQH6ApU/zCCl6Y1bnbsxsp1Er/lKX+qlgljrpWDeFcenpEtoP68hExlKSXECospzKLeSWcr06cbTjlR/x3IJA==}
+
+  '@hcaptcha/react-hcaptcha@1.12.0':
+    resolution: {integrity: sha512-QiHnQQ52k8SJJSHkc3cq4TlYzag7oPd4f5ZqnjVSe4fJDSlZaOQFtu5F5AYisVslwaitdDELPVLRsRJxiiI0Aw==}
+    peerDependencies:
+      react: '>= 16.3.0'
+      react-dom: '>= 16.3.0'
 
   '@headlessui/react@2.2.3':
     resolution: {integrity: sha512-hgOJGXPifPlOczIeSwX8OjLWRJ5XdYApZFf7DeCbCrO1PXHkPhNTRrA9ZwJsgAG7SON1i2JcvIreF/kbgtJeaQ==}
@@ -1554,6 +1570,8 @@ snapshots:
       '@babel/core': 7.26.10
       '@babel/helper-plugin-utils': 7.26.5
 
+  '@babel/runtime@7.27.1': {}
+
   '@babel/template@7.27.0':
     dependencies:
       '@babel/code-frame': 7.26.2
@@ -1742,6 +1760,15 @@ snapshots:
       tabbable: 6.2.0
 
   '@floating-ui/utils@0.2.9': {}
+
+  '@hcaptcha/loader@2.0.0': {}
+
+  '@hcaptcha/react-hcaptcha@1.12.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@babel/runtime': 7.27.1
+      '@hcaptcha/loader': 2.0.0
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   '@headlessui/react@2.2.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:

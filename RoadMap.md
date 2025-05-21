@@ -7,6 +7,8 @@
 	•	✅ Integrazione con Supabase
 	•	✅ Setup autenticazione (email/password e GitHub)
 	•	✅  Test login funzionante
+	•	✅  Aggiunto hCaptcha
+
 
 ⸻
 
