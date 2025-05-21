@@ -1,9 +1,16 @@
+import { useAuth } from '../../context/AuthContext';
+import Login from '../../auth/Login';
 
 export default function HomePage() {
 
+    const {user} = useAuth();
+    console.log(user);
+
+
     return(
         <>
-         <h1 className="text-4xl font-bold text-center my-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 drop-shadow-lg"> Home</h1>
+        {user ? <h1 className="text-4xl font-bold text-center my-6 text-black bg-clip-text  drop-shadow-lg"> {'Welcome,  ' + user.user_metadata.full_name} </h1> : <Login />  }
+      
         </>
     )
 }

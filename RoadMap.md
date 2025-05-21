@@ -6,8 +6,8 @@
 	•	✅ Setup progetto con React + Vite + Tailwind CSS
 	•	✅ Integrazione con Supabase
 	•	✅ Setup autenticazione (email/password e GitHub)
-	•	✅  Test login funzionante
-	•	✅  Aggiunto hCaptcha
+	•	✅ Test login funzionante
+	•	✅ Aggiunto hCaptcha
 
 
 ⸻
@@ -20,7 +20,7 @@
 ⸻
 
 💻 Fase 3 – Frontend base
-	•	Routing React configurato (Routing.jsx)
+	•	✅ Routing React configurato (Routing.jsx)
 	•	✅ Creazione pagina Songs.jsx
 	•	✅ Creazione form per inserire nuove canzoni
 	•	✅ Creazione pagina singola canzone
@@ -49,3 +49,11 @@
 📲 Fase 6 – Deploy & App
 	•	✅ Deploy su Vercel (dev test)
 	•	Integrazione con Capacitor o Expo per versione mobile
+
+ Fase 7 – Completamenti Extra
+	•	integrazione con Ai
+	•	AppStore 
+	•	Login Google AppleId 
+
+
+	
