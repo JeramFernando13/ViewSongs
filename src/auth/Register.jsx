@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { supabase } from "../supabase/supabaseClient";
 import { useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -13,18 +13,13 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const [captchaToken, setCaptchaToken] = useState(null);
+  // const [captchaToken, setCaptchaToken] = useState(null);
 
-    const captchaRef = useRef();
+  //   const captchaRef = useRef();
   
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
-    if (!captchaToken) {
-      setError("Verifica Captcha fallita. Riprova.");
-      return;
-    }
 
     if (password !== confirmPassword) {
       setError("Le password non coincidono.");
@@ -43,7 +38,7 @@ export default function Register() {
 
     if (error) {
       setError(error.message);
-      captchaRef.current.resetCaptcha()
+      // captchaRef.current.resetCaptcha()
 
       
     } else {
@@ -90,11 +85,11 @@ export default function Register() {
         />
         {error && <p className="text-red-500 text-sm">{error}</p>}
 
-         <HCaptcha
+         {/* <HCaptcha
         sitekey="496653ac-582a-4208-af60-2206f19e424e"
         onVerify={(token) => setCaptchaToken(token)}
         ref={captchaRef}
-        />
+        /> */}
 
         <button type="submit" className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
           Crea account

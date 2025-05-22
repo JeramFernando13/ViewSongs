@@ -11,20 +11,16 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const [captchaToken, setCaptchaToken] = useState(null);
+  // const [captchaToken, setCaptchaToken] = useState(null);
   
-  const captchaRef = useRef();
+  // const captchaRef = useRef();
   
   const handleLogin = async (e) => {
     e.preventDefault();
-    if (!captchaToken) {
-      setError("Verifica Captcha fallita. Riprova.");
-      return;
-    }
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) {
       setError(error.message);
-      captchaRef.current.resetCaptcha()
+      // captchaRef.current.resetCaptcha()
     } else {
       navigate("/"); // o "/songs"
       toast.success('Logged In')
@@ -53,11 +49,11 @@ export default function Login() {
           required/>
         {error && <p className="text-red-500 text-sm">{error}</p>}
 
-        <HCaptcha
+        {/* <HCaptcha
         sitekey="496653ac-582a-4208-af60-2206f19e424e"
         onVerify={(token) => setCaptchaToken(token)}
         ref={captchaRef}
-        />
+        /> */}
         
         <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
           Accedi
