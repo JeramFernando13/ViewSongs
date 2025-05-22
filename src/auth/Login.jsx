@@ -4,23 +4,33 @@ import { useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { useRef } from "react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
+  const [captchaToken, setCaptchaToken] = useState(null);
+  
+  const captchaRef = useRef();
+  
   const handleLogin = async (e) => {
     e.preventDefault();
+    if (!captchaToken) {
+      setError("Verifica Captcha fallita. Riprova.");
+      return;
+    }
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) {
       setError(error.message);
+      captchaRef.current.resetCaptcha()
     } else {
       navigate("/"); // o "/songs"
       toast.success('Logged In')
     }
   };
+
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 border rounded shadow">
@@ -45,7 +55,8 @@ export default function Login() {
 
         <HCaptcha
         sitekey="496653ac-582a-4208-af60-2206f19e424e"
-        onVerify={(token,ekey) => handleVerificationSuccess(token, ekey)}
+        onVerify={(token) => setCaptchaToken(token)}
+        ref={captchaRef}
         />
         
         <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
